@@ -1,0 +1,132 @@
+/**
+Theme Name: APN-Makler Theme
+Author: MaiNetCare GmbH
+Author URI: https://mainetcare.de/
+Description: Special Build theme for APN Makler Website, derived from Astra Pro
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: apnmakler-theme
+Template: astra
+*/
+
+@import "mi_mixins";
+
+//body {
+//  background-color: transparent;
+//}
+
+
+.mi-logotext {
+  margin-top: 7px;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+// hover menu underline:
+.fl-page-nav-right .fl-page-nav-wrap .navbar-nav > li > a:hover {
+  border-top: #222 2px solid;
+}
+
+.fl-page-nav-right .fl-page-nav-wrap .navbar-nav > li > a {
+  border-top: #FFF 2px solid;
+}
+
+.mi-uppercase {
+  text-transform: uppercase;
+}
+
+.mi-hide {
+  @include hide_from_dom;
+}
+
+// NAVIGATION:
+.mi_nav_level2 > a {
+  text-transform: uppercase !important;
+  color: #222 !important;
+  &::before {
+    content: "" !important;
+  }
+}
+
+
+
+// Google Maps:
+.acf-map {
+  width: 100%;
+  height: 750px;
+  border: #ccc solid 1px;
+  margin: 20px 0;
+}
+
+/* fixes potential theme css conflict */
+.acf-map img {
+  max-width: inherit !important;
+}
+
+.mi-apncard {
+  border: 1px solid #CCC;
+  margin: 0 0;
+  padding: 30px 20px;
+}
+
+//.mi-datatable {
+//  td {
+//    padding: 3px 0 2px 0;
+//  }
+//  td.col0 {
+//    padding-right: 10px;
+//  }
+//}
+
+// Accordion for List of Mitglieder:
+
+.miaccordion, .miaccordion * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.miaccordion {
+  overflow: hidden;
+}
+
+/*----- Section Titles -----*/
+.miaccordion-section-title {
+  width: 100%;
+  padding: 5px;
+  display: inline-block;
+  transition: all linear 0.15s;
+  font-size: 1.100em;
+  &:before {
+    content: "> ";
+  }
+  &.active, &:hover {
+    background: #EEE;
+    text-decoration: none;
+  }
+}
+.miaccordion-section-title.active {
+  &:before {
+    content: "> ";
+  }
+}
+
+.miaccordion-section:last-child .miaccordion-section-title {
+  border-bottom: none;
+}
+
+/*----- Section Content -----*/
+.miaccordion-section-content {
+  padding: 15px;
+  display: none;
+  background-color: #FFF;
+}
+
+.uabb-info-list-content .uabb-info-list-description a {
+  color: #1877bf;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
