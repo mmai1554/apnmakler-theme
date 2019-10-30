@@ -21,3 +21,13 @@ function child_enqueue_styles() {
 }
 
 add_action( 'wp_enqueue_scripts', 'child_enqueue_styles', 15 );
+
+/**
+ * Editor Zugriff auf Menü Optionen gewähren
+ */
+add_action( 'admin_init', function () {
+	$role_object = get_role( 'editor' );
+	if ( ! $role_object->has_cap( 'edit_theme_options' ) ) {
+		$role_object->add_cap( 'edit_theme_options' );
+	}
+}, 1 );
